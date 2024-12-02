@@ -1,0 +1,32 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Add A Employee</h1>
+      <p>Enter All your details correctly!</p>
+      {{#each errors}}
+        <div class="error">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/employees/add" method="POST">
+        <div class="input-group">
+          <label for="name">Employee Name</label>
+          <input type="text" name="name" id="name" class="input-box" placeholder="eg. First Name & Last Name"
+            maxlength="100" value={{name}}>
+        </div>
+        <div class="input-group">
+          <label for="age">Age: </label>
+          <input type="number" name="age" id="age" class="input-box" placeholder="eg. 22, 24, 30" value={{age}}>
+        </div>
+        <div class="input-group">
+          <label for="department">Department Name</label>
+          <input type="text" name="department" id="department" class="input-box" placeholder="eg. Information Technology"
+          maxlength="100" value={{department}}>
+        </div>
+        <div class="input-group">
+          <label for="email">Contact Email</label>
+          <input type="email" name="contact_email" id="contactemail" class="input-box" placeholder="Enter an email" value={{contact_email}}>
+        </div>
+        <input type="submit" value="Add Employee" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>

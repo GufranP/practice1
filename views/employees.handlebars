@@ -1,0 +1,21 @@
+<section id="employees" class="container">
+    <h1>All Employees</h1>
+
+    {{#each employees}}
+      <div class="employee">
+        <h3>Id: {{id}}</h3>
+        <h3>{{name}}</h3>
+        <h3>{{department}}</h3>
+        <h3>Age: {{age}}</h3>
+        <a href="/employees/{{id}}/update" class="update-btn" onclick="">Update</a>
+        <form action="/employees/{{id}}/delete"  method="post">
+        <button type="submit" class="delete-btn" value="Delete" /> Delete</button>
+        </form>
+        {{!-- <a href="/employees/{{id}}/delete" class="delete-btn" onclick="">Delete</a> --}}
+
+    </div>
+    {{else}}
+      <p>No Employees available</p>
+    {{/each}}
+    
+  </section>
